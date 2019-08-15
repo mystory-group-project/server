@@ -6,9 +6,13 @@ let storySchema = new Schema({
         type: Schema.Types.ObjectId,
         ref: 'User'
     },
-    link: {
+    pdf: {
         type: String,
-        required: [true, 'please insert file']
+        required: [true, 'please insert pdf file']
+    },
+    image: {
+        type: String,
+        required: [true, 'please insert image']
     },
     title: {
         type: String,
