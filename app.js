@@ -9,9 +9,10 @@ const PORT = process.env.PORT || 3000;
 const mongoose = require('mongoose')
 const errhandler = require('./middlewares/errhandler')
 const routes = require('./routes')
+const uri = process.env.mongoDB_URI
 
 
-mongoose.connect(`mongodb://localhost:27017/${process.env.DB}`, {useNewUrlParser: true },function (err) {
+mongoose.connect(uri, {useNewUrlParser: true },function (err) {
     if (err) {
         console.log(err)
     }
