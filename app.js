@@ -9,6 +9,8 @@ const PORT = process.env.PORT || 3000;
 const mongoose = require('mongoose')
 const errhandler = require('./middlewares/errhandler')
 const routes = require('./routes')
+
+
 mongoose.connect(`mongodb://localhost:27017/${process.env.DB}`, {useNewUrlParser: true },function (err) {
     if (err) {
         console.log(err)
@@ -17,6 +19,7 @@ mongoose.connect(`mongodb://localhost:27017/${process.env.DB}`, {useNewUrlParser
         console.log('CONNECTED TO MONGOOSE..')
     }
 })
+
 
 app.use(cors())
 app.use(express.json())
