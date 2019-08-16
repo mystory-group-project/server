@@ -14,6 +14,12 @@ const getPublicUrl = (filename) => {
 
 let promises = []
 const sendUploadToGCS = (req, res, next) => {
+    if(req.files[0].mimetype !== 'application/pdf')  {
+        throw({
+            status: 406,
+            message: "File type should be pdf"
+        })
+    }
     req.files.forEach((item) => {
         const type = item.mimetype.split('/')
         if (item.mimetype !== 'application/pdf') {
