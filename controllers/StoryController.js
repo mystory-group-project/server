@@ -20,7 +20,7 @@ class StoryController {
     }
 
     static loadAll(req, res, next) {
-        Story.find()
+        Story.find().populate('author')
         .then(results => {
             res.status(200).json(results)
         })
