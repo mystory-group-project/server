@@ -4,7 +4,7 @@ const CLOUD_BUCKET = process.env.CLOUD_BUCKET
 
 const storage = new Storage({
   projectId: process.env.GCLOUD_PROJECT,
-  keyFilename: path.join(__dirname, '../google-storage.json')
+  keyFilename: process.env.key_file
 })
 const bucket = storage.bucket(CLOUD_BUCKET)
 

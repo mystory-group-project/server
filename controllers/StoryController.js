@@ -30,7 +30,13 @@ class StoryController {
     static delete(req, res, next) {
         Story.findByIdAndDelete(req.params.id)
         .then(results => {
-            res.status(200).json(results)
+
+            let pdf_name = results.pdf.split('/')
+            pdf_name = pdf_name[pdf_name.length-1]
+            let image_name = results.image.split('/')
+            image_name = image_name[image_name.length - 1]
+            req.files = [pdf_name, image_name]
+            next()
         })
         .catch(next)
     }

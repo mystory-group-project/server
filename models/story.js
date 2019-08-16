@@ -23,7 +23,8 @@ let storySchema = new Schema({
         required: [true, 'please insert description']
     }
 }, {
-    versionKey: false
+    versionKey: false,
+    timestamps: true
 })
 
 const Story = mongoose.model('Story', storySchema)
