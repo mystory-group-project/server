@@ -5,5 +5,4 @@ const StoryRouter = require('./story')
 
 router.use('/user', UserRouter)
 router.use('/story', StoryRouter)
-
 module.exports = router
